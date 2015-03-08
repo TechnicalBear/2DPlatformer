@@ -13,8 +13,8 @@ function love.conf(t)
 	t.console = true
 	t.title = "Platformer"
 	t.author = "Bearz"
-	t.screen.fullscreen = false
-	t.screen.vsync = false
-	t.screen.height = 600
-	t.screen.width = 800
+	t.window.fullscreen = false
+	t.window.vsync = false
+	t.window.height = 600
+	t.window.width = 800
 end
