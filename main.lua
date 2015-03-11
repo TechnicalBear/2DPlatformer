@@ -1,10 +1,9 @@
-local AdvTiledLoader = require ("AdvTiledLoader")
+local sti = require "libs/sti"
 
 function love.load()
-	AdvTiledLoader.path = "maps/"
-	map = AdvTiledLoader/load("map.tmx")
-	map:setDrawRange(0, 0, map.width * map.tileWidth, map.height * map.tileHeight)
-
+	local mappath  = "maps/"
+	map = sti.new(mappath .. "map")
+	
 end
 
 function love.draw()
