@@ -8,10 +8,10 @@ function love.load()
 
 	
 	
-    world =			{
+    world =	   {
                     gravity = 1536,
                     ground = 512, 
-                    }
+               }
 player = 		{
                     x = 256,
                     y= 256,
