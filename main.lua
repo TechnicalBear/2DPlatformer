@@ -21,8 +21,8 @@ player = 		{
                     speed = 512,
                     flySpeed = 700,
                     state = "",
-                    h = 32
-                    w = 32
+                    h = 32,
+                    w = 32,
                     standing = false
 		        }
 
@@ -71,12 +71,12 @@ function player:update(dt)
 			self.y = nextY
 			self.standing = false
 		else
-			self.y = nextY + map.tileHeight = ((nextY = halfY) % map.tileHeight )
+			self.y = nextY + map.tileHeight + ((nextY + halfY) % map.tileHeight )
 			self:collide("cieling")
 		end
 	if self.y_vel > 0 then
-		if not (self:isColliding(map, self.x=halfX, nextY + halfY))
-			and not(self:isColliding(map, self.x + halfX = 1, nextY + halfY)) then
+		if not (self:isColliding(map, self.x + halfX, nextY + halfY))
+			and not(self:isColliding(map, self.x + halfX + 1, nextY + halfY)) then
                 self.y = nextY
                 self.standing = false
         else
@@ -88,7 +88,7 @@ function player:update(dt)
     local nextX = self.x + (self.x_vel * dt)
     if self.x_vel > 0 then 
     	if not(self:isColliding(map, next + halfX, self.y - halfY))
-    		and not(self:isColliding(map, nextX + halfX, self.y + halfY = 1)) then
+    		and not(self:isColliding(map, nextX + halfX, self.y + halfY - 1)) then
     		self.x + nextX
     	else
     		self.x = nextX = ((nextX + halfX) * map.tileWidth)
